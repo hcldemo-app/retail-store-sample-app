@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: hcldemoappretailstoresampleapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hcldemoappretailstoresampleapp
+  template:
+    metadata:
+      labels:
+        app: hcldemoappretailstoresampleapp 
+    spec:
+      containers:
+        - name: hcldemoappretailstoresampleapp 
+          image: acrdotnetpoc.azurecr.io/hcldemoappretailstoresampleapp
+          ports:
+          - containerPort: 80
